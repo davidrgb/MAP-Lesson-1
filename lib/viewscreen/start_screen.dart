@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson1/viewscreen/image_screen.dart';
 import 'package:lesson1/viewscreen/materialdesign_screen.dart';
 
 class StartScreen extends StatelessWidget {
@@ -11,15 +12,53 @@ class StartScreen extends StatelessWidget {
         title: Text('Start Menu'),
         actions: [
           IconButton(
-              onPressed: () {
-                print('======== alarm button');
-              },
-              icon: Icon(Icons.alarm)),
+            onPressed: () {
+              print('======== alarm button');
+            },
+            icon: Icon(Icons.alarm),
+          ),
           IconButton(
-              onPressed: () {
-                print('======== message button');
-              },
-              icon: Icon(Icons.message)),
+            onPressed: () {
+              print('======== message button');
+            },
+            icon: Icon(Icons.message),
+          ),
+          PopupMenuButton(
+            onSelected: (String value) {
+              print('======== $value');
+            },
+            itemBuilder: (BuildContext context) {
+              return <PopupMenuItem<String>>[
+                PopupMenuItem(
+                  value: 'License',
+                  child: Row(
+                    children: [
+                      Icon(Icons.label),
+                      Text('Label'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  value: 'Balance',
+                  child: Row(
+                    children: [
+                      Icon(Icons.account_balance),
+                      Text('Balance'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  value: 'Profile',
+                  child: Row(
+                    children: [
+                      Icon(Icons.person),
+                      Text('Profile'),
+                    ],
+                  ),
+                ),
+              ];
+            },
+          ),
         ],
       ),
       drawer: Drawer(
@@ -52,17 +91,26 @@ class StartScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text('Choose a menu to navigate'),
+          Text(
+            'Choose a menu to navigate',
+            style: Theme.of(context).textTheme.headline5,
+          ),
           ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, MaterialDesignScreen.routeName);
-              },
-              child: Text('Material Design Style Demo')),
+            onPressed: () {
+              Navigator.pushNamed(context, MaterialDesignScreen.routeName);
+            },
+            child: Text(
+              'Material Design Style Demo',
+              style: Theme.of(context).textTheme.button,
+            ),
+          ),
           ElevatedButton(
-              onPressed: () {
-                print('======== the second menu');
-              },
-              child: Text('Second button')),
+            onPressed: () => Navigator.pushNamed(context, ImageScreen.routeName),
+            child: Text(
+              'Image Demo',
+              style: Theme.of(context).textTheme.button,
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
