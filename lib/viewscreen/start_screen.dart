@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson1/viewscreen/buttondemo_screen.dart';
 import 'package:lesson1/viewscreen/image_screen.dart';
 import 'package:lesson1/viewscreen/materialdesign_screen.dart';
 
@@ -101,13 +102,20 @@ class StartScreen extends StatelessWidget {
             },
             child: Text(
               'Material Design Style Demo',
-              style: Theme.of(context).textTheme.button,
+              //style: Theme.of(context).textTheme.button,
             ),
           ),
           ElevatedButton(
             onPressed: () => Navigator.pushNamed(context, ImageScreen.routeName),
             child: Text(
               'Image Demo',
+              style: Theme.of(context).textTheme.button,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, ButtonDemoScreen.routeName),
+            child: Text(
+              'Button Demo',
               style: Theme.of(context).textTheme.button,
             ),
           ),
