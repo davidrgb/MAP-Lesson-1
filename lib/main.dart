@@ -14,29 +14,49 @@ class Lesson1App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.red[800],
-        textTheme: TextTheme(
-          headline1: TextStyle(
-            fontSize: 64.0,
-            color: Colors.teal,
+          brightness: Brightness.dark,
+          primaryColor: Colors.red[800],
+          textTheme: TextTheme(
+            headline1: TextStyle(
+              fontSize: 64.0,
+              color: Colors.teal,
+            ),
           ),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.teal,
-            textStyle: TextStyle(fontSize: 26.0),
-            elevation: 10.0,
-            shadowColor: Colors.red,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.teal,
+              textStyle: TextStyle(fontSize: 26.0),
+              elevation: 10.0,
+              shadowColor: Colors.red,
+            ),
           ),
-        ),
-      ),
+          outlinedButtonTheme: OutlinedButtonThemeData(
+            style: OutlinedButton.styleFrom(
+              primary: Colors.white,
+              backgroundColor: Colors.amberAccent,
+              elevation: 6.0,
+              shadowColor: Colors.yellow,
+              textStyle: TextStyle(
+                fontSize: 36.0,
+              ),
+            ),
+          ),
+          textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+              primary: Colors.yellow,
+              textStyle: TextStyle(
+                fontSize: 28.0,
+              ),
+            ),
+          )),
       initialRoute: StartScreen.routeName,
       routes: {
         StartScreen.routeName: (BuildContext context) => StartScreen(),
-        MaterialDesignScreen.routeName: (BuildContext context) => MaterialDesignScreen(),
+        MaterialDesignScreen.routeName: (BuildContext context) =>
+            MaterialDesignScreen(),
         ImageScreen.routeName: (BuildContext context) => ImageScreen(),
-        ButtonDemoScreen.routeName: (BuildContext context) => ButtonDemoScreen(),
+        ButtonDemoScreen.routeName: (BuildContext context) =>
+            ButtonDemoScreen(),
       },
     );
   }
