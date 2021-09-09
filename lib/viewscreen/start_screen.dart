@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lesson1/viewscreen/buttondemo_screen.dart';
+import 'package:lesson1/viewscreen/fontdemo_screen.dart';
 import 'package:lesson1/viewscreen/image_screen.dart';
 import 'package:lesson1/viewscreen/materialdesign_screen.dart';
+import 'package:lesson1/viewscreen/rowcol_screen.dart';
 
 class StartScreen extends StatelessWidget {
   static const routeName = '/startScreen';
@@ -116,6 +118,20 @@ class StartScreen extends StatelessWidget {
             onPressed: () => Navigator.pushNamed(context, ButtonDemoScreen.routeName),
             child: Text(
               'Button Demo',
+              style: Theme.of(context).textTheme.button,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, FontDemoScreen.routeName),
+            child: Text(
+              'Font Demo',
+              style: Theme.of(context).textTheme.button,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, RowColDemoScreen.routeName),
+            child: Text(
+              'Row/Col Demo',
               style: Theme.of(context).textTheme.button,
             ),
           ),
