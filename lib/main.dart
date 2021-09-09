@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson1/viewscreen/businesscard_screen.dart';
 import 'package:lesson1/viewscreen/buttondemo_screen.dart';
 import 'package:lesson1/viewscreen/fontdemo_screen.dart';
 import 'package:lesson1/viewscreen/image_screen.dart';
@@ -62,6 +63,7 @@ class Lesson1App extends StatelessWidget {
             ButtonDemoScreen(),
         FontDemoScreen.routeName: (context) => FontDemoScreen(),
         RowColDemoScreen.routeName: (context) => RowColDemoScreen(),
+        BusinessCardScreen.routeName: (context) => BusinessCardScreen(),
       },
     );
   }

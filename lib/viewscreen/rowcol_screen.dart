@@ -96,6 +96,26 @@ class RowColDemoScreen extends StatelessWidget {
               ),
             ],
           ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.yellow[900],
+              child: Text(
+                'Hello',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.yellow[900],
+              child: Text(
+                'World',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+            ),
+          ),
         ],
       ),
     );
